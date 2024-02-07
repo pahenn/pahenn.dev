@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   extends: ["@nuxt/ui-pro"],
-  modules: ["@nuxt/ui", "@nuxt/content", "nuxt-icon"],
+  modules: ["@nuxt/ui", "@nuxt/content", "nuxt-icon", "@pinia/nuxt"],
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
     "components:extend": (components) => {
