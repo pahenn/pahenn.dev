@@ -9,7 +9,7 @@
       </div>
     </div>
     <ClientOnly>
-      <LazyUDocsSearch hide-color-mode />
+      <UCommandPalette />
     </ClientOnly>
   </div>
 </template>
