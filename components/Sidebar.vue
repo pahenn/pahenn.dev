@@ -1,10 +1,15 @@
 <script setup lang="ts">
   const options = [
-    { label: "Home", shortcut: 1, to: "/" },
-    { label: "Blog", shortcut: 2, to: "/blog" },
-    { label: "Projects", shortcut: 3, to: "/projects" },
+    { label: "home", to: "/", shortcut: "1" },
+    { label: "projects", to: "/projects", shortcut: "2" },
+    { label: "blog", to: "/blog", shortcut: "3" },
   ]
-  const { metaSymbol } = useShortcuts()
+  defineShortcuts({
+    "1": () => navigateTo("/"),
+    "2": () => navigateTo("/projects"),
+    "3": () => navigateTo("/blog"),
+  })
+  // const { metaSymbol } = useShortcuts()
 </script>
 
 <template>
@@ -12,16 +17,15 @@
     id="left-sidebar"
     class="flex flex-col h-full w-[225px] px-1 overflow-auto shrink-0 border-r"
   >
-    <!-- <div id="search-button"></div> -->
     <div
       id="top-sidebar-items"
       class="flex flex-col py-3 px-1 space-y-3"
     >
       <ULink
-        v-for="option in options"
+        v-for="(option, index) in options"
         :key="option.shortcut"
-        class="inline-flex h-9 border rounded justify-between items-center px-3 hover:bg-gray-50"
-        active-class="outline"
+        class="inline-flex h-9 border rounded justify-between items-center px-3 hover:bg-primary-100"
+        active-class="bg-primary-200"
         :to="option.to"
       >
         <span>{{ option.label }}</span>

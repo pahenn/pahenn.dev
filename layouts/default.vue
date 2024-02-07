@@ -1,21 +1,15 @@
-<script setup lang="ts">
-  defineShortcuts({
-    "1": () => navigateTo("/"),
-    "2": () => navigateTo("/blog"),
-    "3": () => navigateTo("/projects"),
-  })
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="flex flex-col w-full h-[100dvh]">
     <div class="flex h-full w-full">
       <Sidebar />
-      <div class="flex flex-col w-full px-4 pb-4 overflow-auto">
+      <div class="flex flex-col w-full px-4 py-3 overflow-auto">
         <slot />
       </div>
     </div>
     <ClientOnly>
-      <LazyUDocsSearch />
+      <LazyUDocsSearch hide-color-mode />
     </ClientOnly>
   </div>
 </template>
